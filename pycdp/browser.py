@@ -128,7 +128,13 @@ class BrowserLauncher(LoggerMixin):
 
     def __del__(self):
         if self._process is not None:
-            warnings.warn('A BrowserLauncher instance has not closed with .kill(), it will leak')
+            try:
+                self.kill()
+            except Exception as e:
+                warnings.warn(
+                    f'Cannot .kill() BrowserLauncher instance: {e}\n'
+                    f'It will leak.'
+                )
 
 
 class ChromeLauncher(BrowserLauncher):
