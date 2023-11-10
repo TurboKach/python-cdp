@@ -1,5 +1,5 @@
 # Python CDP
-#### Currently supports CDP [r1134181][2] (Chrome 113).
+#### Currently supports CDP [r1179426][2] (Chrome 117).
 
 Python CDP Generator (shortened to PyCDP) is a library that provides
 Python wrappers for the types, commands, and events specified in the [Chrome
@@ -89,7 +89,7 @@ d.addCallback(lambda *args: reactor.stop())
 reactor.run()
 ```
 
-You also can use just the builtin CDP type wrappers with `import pycdp.cdp` on your own client implementation. If you want to try a different CDP version you can build new type wrappers with `cdpgen` command:
+You also can use just the built-in CDP type wrappers with `import pycdp.cdp` on your own client implementation. If you want to try a different CDP version you can build new type wrappers with `cdpgen` command:
 ```
 usage: cdpgen <arguments>
 
@@ -111,7 +111,7 @@ cdpgen --browser-protocol browser_protocol.json --js-protocol js_protocol.json -
 ```
 You can then include the `/tmp/cdp` package in your project and import it like the builtin CDP types.  
 
-### Updating built in CDP wrappers
+### Updating built-in CDP wrappers
 The `update-cdp.sh` script generates the builtin CDP wrappers, the `pycdp.cdp` package, by automatically fetching CDP protocol specifications from the [ChromeDevTools][8] repostitory.
 
 **To generate types for the latest version:**
@@ -151,10 +151,10 @@ PyCDP is licensed under the MIT License.
 <hr>
 
 [1]: https://chromedevtools.github.io/devtools-protocol/
-[2]: https://github.com/ChromeDevTools/devtools-protocol/tree/4dd6c67776f43f75bc9b19f09618c151621c6ed9
+[2]: https://github.com/ChromeDevTools/devtools-protocol/tree/39e36261937bf39dced789dd7ff19df6933d56d8
 [3]: docs/getting_started.rst
 [4]: https://github.com/hyperiongray/trio-chrome-devtools-protocol
 [5]: https://python-poetry.org/docs/
 [6]: https://pypi.org/project/Twisted/
 [7]: https://pypi.org/project/autobahn/
-[8]: https://github.com/ChromeDevTools
+[8]: https://github.com/ChromeDevTools/devtools-protocol
